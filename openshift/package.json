@@ -1,0 +1,14 @@
+{
+   "author": "Gary Drocella",
+   "name": "ezbakehelper-openshift",
+   "version": "2.0.1-snapshot.0",
+   "description": "Ezbake Openshift Container Util for nodejs",
+   "main": "./lib/OpenShiftUtil.js",
+   "dependencies": {
+      "winston": "0.8.3",
+      "lodash": "3.2.0"
+   },
+   "devDependencies": {
+      "should": "*"
+   }
+}

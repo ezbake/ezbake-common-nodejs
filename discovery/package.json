@@ -1,0 +1,30 @@
+{
+  "name": "ezbake-discovery",
+  "version": "2.0.1-snapshot.0",
+  "description": "Ezbake service discovery for nodejs",
+  "main": "./lib/index.js",
+  "scripts": {
+    "test": "mocha --reporter spec"
+  },
+  "licenses": [
+    {
+      "type": "Apache-2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0"
+    }
+  ],
+  "keywords": [
+    "ezdiscovery",
+    "service discovery",
+    "discovery"
+  ],
+  "author": "Jeff Hastings",
+  "dependencies": {
+    "winston": "0.8.3",
+    "q": "1.x",
+    "node-zookeeper-client": "^0.2.1"
+  },
+  "devDependencies": {
+    "mocha": "*",
+    "should": "*"
+  }
+}

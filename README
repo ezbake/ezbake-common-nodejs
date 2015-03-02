@@ -1,0 +1,73 @@
+# EzBake Common Libraries for NodeJS
+
+This repo contains all of the core EzBake libraries for NodeJS. Essentially everything that is needed
+to write an application for EzBake.
+
+## Getting Started
+
+Clone the repo
+
+```
+git clone <repo url> ezbake-common-nodejs
+cd ezbake-common-nodejs
+```
+
+The layout of the directories follows a logical structure: configuration, discovery, thrift-utils, etc. Typically, each
+sub directory is it's own python package.
+
+### Dependencies
+
+- NodeJS ~ 0.10.x
+- npm ~ 2.x
+
+### Configuring npm for Artifactory
+
+We use an Artifactory npm repo for EzBake. The artifactory repo mirrors npmjs.org, so it is safe to configure as the
+global npm repository. The following steps will write the necessary configuration files, including user credentials.
+
+```
+# replace '<artifactory base url>', '<USERNAME>', and '<PASSWORD>' with your artifactory credentials
+export ARTIFACTORY_BASE_URL=<artifactory base url>
+export ARTIFACTORY_USER=<USERNAME>
+export ARTIFACTORY_PASS=<PASSWORD>
+
+npm config set registry https://${ARTIFACTORY_BASE_URL}/artifactory/api/npm/npm
+cp ~/.npmrc ~/.npmrc.bak
+curl -u "${ARTIFACTORY_USER}:${ARTIFACTORY_PASS}" https://${ARTIFACTORY_BASE_URL}/artifactory/api/npm/auth >> ~/.npmrc
+
+```
+
+Existing configurations are saved in .bak files before being overwritten.
+
+### Installing packages
+
+Each sub project contains a package.json file that can be used in conjunction with npm to install dependencies
+
+```
+npm install
+```
+
+If you find yourself needing to install a specific EzBake dependency, that can be installed with npm as well
+
+```
+npm install ezbake-configuration
+
+### Publishing packages
+
+__NOTE__: These steps are outlined for reference, and should only be performed by team leads. In the future publishing
+to the npm repo will be performed by Jenkins.
+
+On the command line:
+
+```
+npm publish --registry https://${ARTIFACTORY_BASE_URL}/artifactory/api/npm/npm-local
+```
+
+In package.json:
+
+```
+"publishConfig":{
+  "registry":"https://${ARTIFACTORY_BASE_URL}/artifactory/api/npm/npm-local"
+}
+
+```

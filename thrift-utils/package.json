@@ -1,0 +1,23 @@
+{
+  "name": "ezbake-thrift-utils",
+  "version": "2.0.1-snapshot.0",
+  "description": "Ezbake Thrift Utils for NodeJS",
+  "licenses": [
+    {
+      "type": "Apache-2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0"
+    }
+  ],
+  "main": "./lib/thriftutils",
+  "dependencies": {
+    "ezbake-discovery": "~2.0.0",
+    "ezbake-configuration":"~2.0.0",
+    "thrift": "0.9.1",
+    "winston": "0.7.3",
+    "generic-pool": "2.1.1",
+    "lodash-node": "2.4.1"
+  },
+  "devDependencies": {
+      "mocha": "1.20.1"
+  }
+}

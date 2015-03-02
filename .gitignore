@@ -1,0 +1,14 @@
+# NodeJS
+node_modules/
+
+# Swap files
+*~
+*#
+.*.swp
+
+# IntelliJ
+.idea/
+*.iml
+
+# Maven
+target/
